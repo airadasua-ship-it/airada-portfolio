@@ -374,7 +374,7 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
                   <h4 className="font-bold text-xs text-amber-300 flex items-center gap-1.5">
                     <Award size={13} /> Languages &amp; Skills
                   </h4>
-                  <p className="text-[11px] text-white/70">Thai (Native), English (TOEIC 755), Japanese (JLPT N3), Microsoft Office, Canva, Photoshop, Google Apps Script, HTML / CSS, Typing 40 WPM</p>
+                  <p className="text-[11px] text-white/70">Thai (Native), English (TOEIC 855), Japanese (JLPT N3), Microsoft Office, Canva, Photoshop, Google Apps Script, HTML / CSS, Typing 40 WPM</p>
                 </div>
               </div>
             </div>

@@ -54,8 +54,8 @@ const workExperience = [
     company: 'OWNDAYS (THAILAND) CO., LTD.',
     period: 'September 2024 – Present',
     description:
-      'Localized and translated marketing and social media content from Japanese and English into Thai for campaigns including OWNDAYS x Hello Kitty, Stranger Things, DITA Lancier, Disney Frozen, and Zootopia. Formulated content strategy, directed creative teams, and built PR and landing pages using HTML/CSS with automated Google Apps Script forms.',
-    results: ['Japanese / English to Thai localization', 'Campaign content strategy', 'PR + landing page development'],
+      'Managed creative content and event support for OWNDAYS meets LingLing Kwong, strengthening brand exposure and helping deliver #1 social media engagement among competitors during the event month. Localized and translated marketing and social media content from Japanese and English into Thai for campaigns including OWNDAYS x Hello Kitty, Stranger Things, DITA Lancier, Disney Frozen, and Zootopia, while formulating content strategy and building PR and landing pages using HTML/CSS with automated Google Apps Script forms.',
+    results: ['Creative content management', 'Event support', '#1 social engagement'],
   },
   {
     title: 'Japanese Coordinator',
@@ -91,13 +91,58 @@ const languageProfiles = [
   },
   {
     name: 'English',
-    level: 'TOEIC 755',
+    level: 'TOEIC 855',
     detail: 'Strong written and spoken communication skills with a high standard of corporate messaging.',
   },
   {
     name: 'Japanese',
     level: 'JLPT N3',
     detail: 'Effective communication and coordination with Japanese stakeholders and bilingual business workflows.',
+  },
+];
+
+const featuredProjects = [
+  {
+    title: 'OWNDAYS × Hello Kitty',
+    category: 'Localized product copy',
+    description: 'Adapted character collaboration messaging for Thai audiences with a playful, brand-safe tone that preserved product appeal and campaign consistency.',
+    url: 'https://www.owndays.com/th/th/news/hellokitty',
+    image: 'https://cdn.gamma.app/d3jfdbe80pdnt49/009ad145f5d94acbb2dbb7b1aec32719/original/ogp_1200x630_without.webp',
+  },
+  {
+    title: 'OWNDAYS × Stranger Things',
+    category: 'Campaign storytelling',
+    description: 'Translated and localized a pop-culture campaign into Thai, bringing the dark, nostalgic tone of Stranger Things into a clear and engaging retail message.',
+    url: 'https://www.owndays.com/th/th/news/stranger-things',
+    image: 'https://cdn.gamma.app/d3jfdbe80pdnt49/699e781cdb8a49999a43eae5c6436762/original/ogp-1200x630.webp',
+  },
+  {
+    title: 'OWNDAYS × DITA Lancier',
+    category: 'Premium brand copy',
+    description: 'Crafted elegant, premium product copy that elevated the partnership story while maintaining a polished, high-end brand voice for Thai consumers.',
+    url: 'https://www.owndays.com/th/th/news/dita-lancier',
+    image: 'https://cdn.gamma.app/d3jfdbe80pdnt49/f04dbaf06f4a4a01886b6a6120b34ed6/original/ogp_1200x630.jpg',
+  },
+  {
+    title: 'FROZEN | OWNDAYS',
+    category: 'Original Thai copy',
+    description: 'Created local campaign copy for a Disney-inspired collection, blending magical visual storytelling with clear product positioning and consumer appeal.',
+    url: 'https://www.owndays.com/th/th/news/frozen',
+    image: 'https://cdn.gamma.app/d3jfdbe80pdnt49/b289d7cb3810464f818d639785b026ad/original/ogp_1200x630.webp',
+  },
+  {
+    title: 'Junni with Thee & Phee',
+    category: 'Family-focused campaign copy',
+    description: 'Wrote original Thai messaging designed for a younger audience, emphasizing warmth, lifestyle relevance, and playful brand personality.',
+    url: 'https://www.owndays.com/th/th/news/junni-th',
+    image: 'https://cdn.gamma.app/d3jfdbe80pdnt49/a5a634791098475fa0ccd45b7d33ab43/original/ogp-1200x630.webp',
+  },
+  {
+    title: 'OWNDAYS PR & Content Pages',
+    category: 'Landing page & webpage development',
+    description: 'Built campaign and PR pages using HTML/CSS, integrating copy, structure, and user flow to support online visibility and conversion-focused content.',
+    url: 'https://www.owndays.com/th/th/information/971',
+    image: 'https://cdn.gamma.app/d3jfdbe80pdnt49/ab95d7ac5c604fbfb2821a819e7a704c/original/56758bcd-ca69-4e48-802d-b790a582057d.webp',
   },
 ];
 
@@ -163,6 +208,7 @@ export function App() {
             <HeroContent
               onOpenResume={() => setActiveModal('resume')}
               onOpenContact={() => setActiveModal('contact')}
+              onOpenFeaturedProjects={() => handleSectionNavigation('projects')}
               isDeadzone={telemetry?.isDeadzone}
             />
           </div>
@@ -266,6 +312,44 @@ export function App() {
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="projects" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-10">
+          <div className="mb-10">
+            <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-[#94A3B8]">Featured Work</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Project Highlights & Featured Works</h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {featuredProjects.map((project) => (
+              <a
+                key={project.title}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_18px_40px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-white/10"
+              >
+                <div className="relative overflow-hidden border-b border-white/10">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5">
+                  <div className="mb-4 inline-flex rounded-full border border-white/10 bg-black/20 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#E2E8F0]">
+                    {project.category}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-[#E2E8F0]">{project.description}</p>
+                  <div className="mt-5 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+                    <span>View Project</span>
+                    <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </div>
+                </div>
+              </a>
             ))}
           </div>
         </section>
