@@ -280,6 +280,21 @@ export function App() {
             <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Work Experience Timeline</h2>
           </div>
 
+          <div className="mb-8 rounded-3xl border border-white/10 bg-white/5 p-5 shadow-[0_18px_40px_rgba(0,0,0,0.18)] backdrop-blur-md sm:p-6">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#94A3B8]">TOEIC Score</p>
+                <p className="mt-2 text-2xl font-semibold text-white">855</p>
+              </div>
+              <div className="max-w-3xl">
+                <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#94A3B8]">Key Achievement</p>
+                <p className="mt-2 text-base leading-7 text-[#E2E8F0]">
+                  “Managed creative content strategy and provided event support for 'OWNDAYS meets LingLing Kwong', driving brand exposure and achieving #1 social media engagement compared to industry competitors during the event month.”
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="space-y-6">
             {workExperience.map((role, index) => (
               <div key={role.title} className="relative grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-5 shadow-[0_18px_40px_rgba(0,0,0,0.18)] backdrop-blur-md sm:p-6 lg:grid-cols-[180px_1fr] lg:items-start">

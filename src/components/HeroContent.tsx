@@ -16,8 +16,8 @@ export const HeroContent: React.FC<HeroContentProps> = ({
   isDeadzone = false,
 }) => {
   return (
-    <div className="pointer-events-auto relative z-10 mx-auto flex w-full max-w-7xl justify-start lg:items-center lg:justify-between">
-      <div className="w-full max-w-[520px] select-none rounded-3xl border border-white/10 bg-black/20 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-md md:p-8 lg:ml-[-32px] lg:mt-8 lg:bg-black/25">
+    <div className="pointer-events-auto relative z-10 mx-auto grid w-full max-w-7xl items-center gap-4 lg:grid-cols-[minmax(320px,430px)_1fr] lg:items-center">
+      <div className="w-full max-w-[430px] select-none rounded-3xl border border-white/10 bg-black/22 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-md md:p-8 lg:ml-2 lg:mt-10 lg:justify-self-start lg:bg-black/18">
         <div className="mb-4 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#E2E8F0]">
           <span className="inline-flex h-2 w-2 rounded-full bg-white" />
           <span>Creative Copywriter &amp; Translator</span>
@@ -88,6 +88,8 @@ export const HeroContent: React.FC<HeroContentProps> = ({
           </button>
         </div>
       </div>
+
+      <div className="hidden lg:block" aria-hidden="true" />
     </div>
   );
 };
