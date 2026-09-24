@@ -43,36 +43,36 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
           <div className="space-y-6">
             <div>
               <span className="text-[10px] uppercase font-bold tracking-[0.3em] text-white/60">
-                Selected Experience
+                Work Experience
               </span>
-              <h2 className="text-3xl font-bold font-editorial mt-1 text-white">Portfolio Highlights</h2>
+              <h2 className="text-3xl font-bold font-editorial mt-1 text-white">Career Highlights</h2>
               <p className="text-sm text-white/70 mt-1">
-                Content marketing, localization, and digital storytelling for Japanese and English audiences.
+                Project coordination, content communication, and multilingual support across Japanese, English, and Thai operations.
               </p>
             </div>
 
             <div className="space-y-4">
               {[
                 {
-                  title: 'Content Writer & Translator',
-                  company: 'OWNDAYS Thailand',
-                  period: 'Sep 2024 – Present',
-                  desc: 'Localized marketing and social media content from Japanese and English into Thai, created campaign and product copy, built PR pages using HTML/CSS, and improved workflow efficiency with AI and automation tools.',
-                  tags: ['JP/EN → TH', 'Campaign Copy', 'Web Content', 'SEO Basics'],
+                  title: 'Project Business Assistant / JP Coordinator',
+                  company: 'Project Business Assistant / JP Coordinator',
+                  period: '2021 – 2024',
+                  desc: 'Supported cross-functional projects and Japanese-language coordination, ensured communication clarity between stakeholders, and helped maintain smooth daily operations across business and administrative workflows.',
+                  tags: ['JP Coordination', 'Project Support', 'Documentation', 'Stakeholder Communication'],
                 },
                 {
-                  title: 'Japanese Coordinator',
-                  company: 'Asia Alliance Partner',
-                  period: 'Oct 2019 – Aug 2024',
-                  desc: 'Translated news and articles, managed website content, wrote Japanese-language articles, and coordinated directly with Japanese stakeholders to keep communication accurate and culturally relevant.',
-                  tags: ['Translation', 'Stakeholder Management', 'Website Content', 'Japanese Articles'],
+                  title: 'Product Planning Admin',
+                  company: 'JTB (Thailand) Asia Alliance Partner',
+                  period: '2019 – 2021',
+                  desc: 'Managed product planning administration, supported coordination workflows, and contributed to office operations with careful documentation, communication, and planning support.',
+                  tags: ['Admin Support', 'Planning', 'Coordination', 'Operations'],
                 },
                 {
-                  title: 'Product Planning',
-                  company: 'JTB Thailand',
-                  period: 'May 2018 – Sep 2019',
-                  desc: 'Developed bespoke travel plans for Japanese clients, coordinated with suppliers, and conducted market research to support product strategy and client-facing planning.',
-                  tags: ['Travel Planning', 'Market Research', 'Supplier Coordination', 'Bespoke Itineraries'],
+                  title: 'General Admin & Content Writer',
+                  company: 'General Admin & Content Writer',
+                  period: '2014',
+                  desc: 'Handled administrative duties and produced content materials, combining office support with writing and editing tasks to maintain brand consistency and internal communication quality.',
+                  tags: ['Content Writing', 'Editing', 'Office Admin', 'Creative Writing'],
                 },
               ].map((proj, idx) => (
                 <div
@@ -114,31 +114,31 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
 
             <div className="prose text-sm text-white/85 leading-relaxed space-y-4">
               <p>
-                Creative and detail-oriented copywriter and translator with 6+ years of experience in content marketing, localization, and web content development.
+                I am Airada Suanjan, a content writer, translator, and project coordinator specializing in Japanese, English, and Thai communication. My work connects business needs, clear messaging, and cultural understanding across multilingual environments.
               </p>
               <p>
-                I specialize in translating Japanese and English into Thai with a focus on natural, culturally relevant communication. My work balances brand voice, clarity, and accuracy while supporting end-to-end content projects from planning and copywriting to execution.
+                I focus on producing accurate, polished, and audience-friendly content while supporting project operations and internal coordination. My background spans content writing, translation, office administration, and business support in cross-language settings.
               </p>
               <p>
-                I enjoy collaborating across teams, managing campaigns, and creating content that feels authentic to the audience while staying consistent with brand direction.
+                I value dependable communication, thoughtful editing, and practical coordination that keeps projects moving smoothly from planning through execution.
               </p>
             </div>
 
             <div>
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white/70 mb-3 flex items-center gap-2">
-                <Sparkles size={14} /> Core Strengths
+                <Sparkles size={14} /> Skills &amp; Strengths
               </h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {[
-                  'Content Copywriting',
-                  'Social Media Copy',
-                  'Product Copywriting',
-                  'Translation & Localization',
-                  'Proofreading & Editing',
-                  'HTML / CSS Basics',
-                  'SEO Basics',
-                  'Content Strategy',
-                  'AI Productivity Workflow',
+                  'Content Writing',
+                  'Translation',
+                  'JP-TH-EN Coordination',
+                  'Office Admin',
+                  'Editing & Creative Writing',
+                  'Canva',
+                  'Photoshop',
+                  'Microsoft Office',
+                  'Typing 40 WPM',
                 ].map((skill, idx) => (
                   <div
                     key={idx}
@@ -161,7 +161,7 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
               </span>
               <h2 className="text-3xl font-bold font-editorial mt-1 text-white">Open to opportunities</h2>
               <p className="text-sm text-white/70 mt-1">
-                Based in Bangkok, Thailand and available for remote, hybrid, or onsite roles.
+                Based in Bangkok, Thailand and available for project, coordination, and content-focused opportunities.
               </p>
             </div>
 
@@ -302,39 +302,39 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h4 className="font-bold text-sm text-white">Content Writer &amp; Translator</h4>
-                      <p className="text-xs text-amber-300 font-mono">OWNDAYS Thailand</p>
+                      <h4 className="font-bold text-sm text-white">Project Business Assistant / JP Coordinator</h4>
+                      <p className="text-xs text-amber-300 font-mono">Project Business Assistant / JP Coordinator</p>
                     </div>
-                    <span className="text-[10px] font-mono text-white/50">Sep 2024 – Present</span>
+                    <span className="text-[10px] font-mono text-white/50">2021 – 2024</span>
                   </div>
                   <p className="text-xs text-white/80 mt-2 leading-relaxed">
-                    Localized marketing and social media content from Japanese and English into Thai, created campaign and product copy, built PR pages using HTML/CSS, and improved workflow efficiency with AI and automation tools.
+                    Supported business coordination and Japanese-language communication across project workflows, helping maintain smooth collaboration between stakeholders with clear documentation and proactive project assistance.
                   </p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h4 className="font-bold text-sm text-white">Japanese Coordinator</h4>
-                      <p className="text-xs text-amber-300 font-mono">Asia Alliance Partner</p>
+                      <h4 className="font-bold text-sm text-white">Product Planning Admin</h4>
+                      <p className="text-xs text-amber-300 font-mono">JTB (Thailand) Asia Alliance Partner</p>
                     </div>
-                    <span className="text-[10px] font-mono text-white/50">Oct 2019 – Aug 2024</span>
+                    <span className="text-[10px] font-mono text-white/50">2019 – 2021</span>
                   </div>
                   <p className="text-xs text-white/80 mt-2 leading-relaxed">
-                    Translated news and articles from English/Japanese into Thai, managed website content, wrote Japanese-language articles, and coordinated directly with Japanese stakeholders across multiple communication streams.
+                    Managed planning administration, supported operational coordination, and contributed to smooth business processes through meticulous follow-up, communication, and structured administrative support.
                   </p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h4 className="font-bold text-sm text-white">Product Planning</h4>
-                      <p className="text-xs text-amber-300 font-mono">JTB Thailand</p>
+                      <h4 className="font-bold text-sm text-white">General Admin &amp; Content Writer</h4>
+                      <p className="text-xs text-amber-300 font-mono">General Admin &amp; Content Writer</p>
                     </div>
-                    <span className="text-[10px] font-mono text-white/50">May 2018 – Sep 2019</span>
+                    <span className="text-[10px] font-mono text-white/50">2014</span>
                   </div>
                   <p className="text-xs text-white/80 mt-2 leading-relaxed">
-                    Developed bespoke travel plans for Japanese clients, coordinated with suppliers, and conducted market research to support product strategy and customer experience planning.
+                    Performed general administrative tasks while creating and editing written content, combining office support with communication work and creative writing responsibilities.
                   </p>
                 </div>
               </div>
@@ -346,14 +346,14 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
-                  <h4 className="font-bold text-xs text-white">Business Japanese</h4>
-                  <p className="text-[11px] text-white/70">Panyapiwat Institute of Management</p>
+                  <h4 className="font-bold text-xs text-white">Education</h4>
+                  <p className="text-[11px] text-white/70">ปริญญาตรี สถาบันการจัดการปัญญาภิวัฒน์ (Panyapiwat Institute of Management)</p>
                 </div>
                 <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
                   <h4 className="font-bold text-xs text-amber-300 flex items-center gap-1.5">
-                    <Award size={13} /> Languages
+                    <Award size={13} /> Languages &amp; Skills
                   </h4>
-                  <p className="text-[11px] text-white/70">Thai (Native), English (TOEIC 755), Japanese (JLPT N3)</p>
+                  <p className="text-[11px] text-white/70">ภาษาไทย (Native), ภาษาอังกฤษ (Good Writing/Speaking), ภาษาญี่ปุ่น (Good Communication/JLPT), Microsoft Office, Canva, Photoshop, Typing 40 WPM</p>
                 </div>
               </div>
             </div>

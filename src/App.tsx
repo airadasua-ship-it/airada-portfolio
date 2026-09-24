@@ -24,7 +24,7 @@ export function App() {
   };
 
   return (
-    <main className="relative w-screen h-screen overflow-hidden bg-[#c81f16] select-none">
+    <main className="relative w-screen h-screen overflow-hidden bg-[#000000] text-[#FFFFFF] select-none">
       {/* 1. Full-Screen Canvas Character Renderer (Motionless body, zero-ghosting, 60fps) */}
       <CharacterCanvas
         onTelemetryUpdate={handleTelemetryUpdate}

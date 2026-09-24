@@ -19,8 +19,8 @@ interface CharacterCanvasProps {
 }
 
 const TOTAL_FRAMES = 64;
-const BG_COLOR = '#c81f16';
-const LERP_FACTOR = 0.26; // tracks in ~35ms with zero lag
+const BG_COLOR = '#000000';
+const LERP_FACTOR = 0.24; // tracks in ~35ms with zero lag
 
 const COMPASS_NAMES = [
   'EAST [RIGHT]',
@@ -253,10 +253,10 @@ export const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
   }, [isReady, manualOverrideAngle, autoPatrol, onTelemetryUpdate]);
 
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#c61b16] select-none pointer-events-none">
+    <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#000000] select-none pointer-events-none">
       {/* Loading Screen */}
       {!isReady && (
-        <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#c61b16] text-white">
+        <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#000000] text-[#FFFFFF]">
           <div className="w-16 h-16 relative flex items-center justify-center mb-6">
             <div className="absolute inset-0 rounded-full border-2 border-white/20 border-t-white animate-spin"></div>
             <span className="font-script text-2xl font-bold text-white">L</span>
@@ -270,7 +270,7 @@ export const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
               style={{ width: `${Math.round((loadedCount / (TOTAL_FRAMES + 1)) * 100)}%` }}
             ></div>
           </div>
-          <span className="text-[10px] text-white/50 mt-2 font-mono">
+          <span className="text-[10px] text-white/60 mt-2 font-mono">
             {loadedCount} / {TOTAL_FRAMES + 1} frames
           </span>
         </div>
