@@ -95,24 +95,45 @@ export const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
     framesRef.current = frames;
   }, []);
 
-  // Mouse move listener
+  // Mouse and touch tracking listeners
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       mousePosRef.current = { x: e.clientX, y: e.clientY };
     };
 
-    const handleTouchMove = (e: TouchEvent) => {
+    const handleTouchStart = (e: TouchEvent) => {
       if (e.touches.length > 0) {
-        mousePosRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        const touch = e.touches[0];
+        mousePosRef.current = { x: touch.clientX, y: touch.clientY };
       }
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        mousePosRef.current = { x: touch.clientX, y: touch.clientY };
+      }
+    };
+
+    const handleTouchEnd = () => {
+      mousePosRef.current = {
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2,
+      };
+    };
+
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
     window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
+    window.addEventListener('touchcancel', handleTouchEnd, { passive: true });
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
+      window.removeEventListener('touchcancel', handleTouchEnd);
     };
   }, []);
 
@@ -257,11 +278,10 @@ export const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
       {/* Loading Screen */}
       {!isReady && (
         <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#000000] text-[#FFFFFF]">
-          <div className="w-16 h-16 relative flex items-center justify-center mb-6">
-            <div className="absolute inset-0 rounded-full border-2 border-white/20 border-t-white animate-spin"></div>
-            <span className="font-script text-2xl font-bold text-white">L</span>
+          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-white/20">
+            <div className="h-7 w-7 rounded-full border-2 border-white/20 border-t-white animate-spin"></div>
           </div>
-          <p className="text-xs uppercase tracking-[0.3em] font-semibold text-white/80 mb-2">
+          <p className="mb-2 text-xs uppercase tracking-[0.3em] font-semibold text-white/80">
             Loading Character Experience
           </p>
           <div className="w-48 h-1 bg-white/20 rounded-full overflow-hidden">
@@ -282,6 +302,7 @@ export const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
         className="w-full h-full block object-cover transform-none will-change-transform"
         style={{
           background: BG_COLOR,
+          touchAction: 'manipulation',
         }}
       />
     </div>

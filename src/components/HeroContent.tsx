@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, MessageSquare, Sparkles } from 'lucide-react';
+import { ArrowUpRight, MapPin, MessageSquare, Sparkles } from 'lucide-react';
 import { sound } from '../utils/audio';
 
 interface HeroContentProps {
@@ -14,36 +14,37 @@ export const HeroContent: React.FC<HeroContentProps> = ({
   isDeadzone = false,
 }) => {
   return (
-    <div className="absolute bottom-10 left-6 sm:left-10 md:bottom-14 md:left-16 z-30 max-w-sm pointer-events-auto flex flex-col items-start select-none">
-      <div className="flex items-center gap-2 mb-1">
-        <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
-        <span className="text-xs sm:text-sm uppercase tracking-[0.35em] text-[#E2E8F0] font-semibold">
-          Hi, I&apos;m
-        </span>
+    <div className="pointer-events-auto w-full max-w-lg select-none rounded-2xl border border-white/10 bg-black/40 p-6 backdrop-blur-md shadow-[0_20px_60px_rgba(0,0,0,0.45)] md:p-8">
+      <div className="mb-4 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#E2E8F0]">
+        <span className="inline-flex h-2 w-2 rounded-full bg-white" />
+        <span>Creative Copywriter &amp; Translator</span>
       </div>
 
-      <h1 className="font-script text-6xl sm:text-7xl md:text-8xl text-white font-bold leading-[1.05] drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)] tracking-wide -ml-1">
-        Airada
+      <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+        Airada Suanjan
       </h1>
-      <div className="mb-2 text-[10px] sm:text-xs uppercase tracking-[0.38em] text-[#E2E8F0] font-medium">
-        Suanjan
-      </div>
-      <div className="mb-3 text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#94A3B8] font-semibold">
-        Content Writer, Translator &amp; Project Coordinator (JP/EN/TH)
+
+      <p className="mt-3 text-sm font-medium uppercase tracking-[0.22em] text-[#E2E8F0] sm:text-[13px]">
+        Content Writer &amp; Translator | Marketing &amp; Admin Specialist
+      </p>
+
+      <div className="mt-5 flex items-center gap-2 text-sm text-[#E2E8F0]">
+        <MapPin size={16} className="text-white" />
+        <span>Bangkok, Thailand • Open to Remote / Hybrid / Onsite</span>
       </div>
 
       {isDeadzone && (
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] tracking-[0.2em] font-mono uppercase text-white my-1 backdrop-blur-md animate-fade-in">
-          <Sparkles size={11} className="text-[#E2E8F0]" />
+        <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-white backdrop-blur-md">
+          <Sparkles size={11} className="text-white" />
           <span>Eye Contact Engaged</span>
         </div>
       )}
 
-      <p className="max-w-[360px] text-xs sm:text-[13px] md:text-sm text-[#E2E8F0] leading-relaxed font-light tracking-wide mt-2 mb-6">
-        Specialist in Japanese, English &amp; Thai content writing, translation, and project coordination with a sharp focus on clarity, culture, and business communication.
+      <p className="mt-5 max-w-md text-sm leading-7 text-[#E2E8F0] sm:text-[15px]">
+        Versatile Copywriter &amp; Translator with 6+ years of experience in content creation, JP/EN to TH translation, and administrative operations.
       </p>
 
-      <div className="flex items-center gap-3">
+      <div className="mt-7 flex flex-col gap-3 sm:flex-row">
         <button
           onClick={() => {
             sound.playClick();
@@ -51,13 +52,10 @@ export const HeroContent: React.FC<HeroContentProps> = ({
           }}
           onMouseEnter={() => sound.playHover()}
           data-interactive="true"
-          className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/30 bg-white/5 text-white text-xs md:text-sm font-bold tracking-[0.15em] uppercase shadow-[0_6px_24px_rgba(255,255,255,0.08)] hover:border-white hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
+          className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/5 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-black"
         >
-          <span>Resume</span>
-          <ArrowUpRight
-            size={16}
-            className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          />
+          <span>Explore Experience</span>
+          <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </button>
 
         <button
@@ -67,10 +65,10 @@ export const HeroContent: React.FC<HeroContentProps> = ({
           }}
           onMouseEnter={() => sound.playHover()}
           data-interactive="true"
-          className="glass-btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-xs md:text-sm font-semibold tracking-[0.15em] uppercase active:scale-95 border border-white/30 hover:border-white hover:bg-white hover:text-black"
+          className="glass-btn inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white"
         >
           <MessageSquare size={14} className="opacity-80" />
-          <span>Let&apos;s Talk</span>
+          <span>Get In Touch</span>
         </button>
       </div>
     </div>
