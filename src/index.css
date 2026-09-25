@@ -11,7 +11,8 @@
   }
 
   html, body, #root {
-    background-color: #000000;
+    --theme-pastel: #AEC6CF;
+    background-color: var(--theme-pastel);
     margin: 0;
     padding: 0;
     width: 100%;
@@ -25,10 +26,26 @@
   }
 
   body {
-    background: #000000;
+    background: linear-gradient(180deg,var(--theme-pastel) 0%, #7FB0D1 100%);
     overscroll-behavior-y: none;
   }
 }
+
+/* Adjust typography and spacing for mobile (sm) */
+@media (max-width: 640px) {
+  h1 { font-size: 28px; }
+  h2 { font-size: 20px; }
+  .glass-card, .glass-btn { padding: 12px; }
+  .text-sm { font-size: 13px; }
+  .text-base { font-size: 14px; }
+  .text-xl { font-size: 18px; }
+  .p-6 { padding: 12px; }
+}
+
+/* Accent adjustments using theme pastel */
+.text-accent { color: color-mix(in srgb, var(--theme-pastel) 80%, #06283D 20%); }
+.btn-accent { background: var(--theme-pastel); color: white; border-color: rgba(255,255,255,0.06); }
+.glass-card { border-color: color-mix(in srgb, var(--theme-pastel) 10%, rgba(255,255,255,0.12) 90%); }
 
 .font-editorial {
   font-family: 'Cinzel', serif;

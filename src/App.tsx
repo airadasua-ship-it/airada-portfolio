@@ -54,32 +54,36 @@ const workExperience = [
     company: 'OWNDAYS (THAILAND) CO., LTD.',
     period: 'September 2024 – Present',
     description:
-      'Managed creative content and event support for OWNDAYS meets LingLing Kwong, strengthening brand exposure and helping deliver #1 social media engagement among competitors during the event month. Localized and translated marketing and social media content from Japanese and English into Thai for campaigns including OWNDAYS x Hello Kitty, Stranger Things, DITA Lancier, Disney Frozen, and Zootopia, while formulating content strategy and building PR and landing pages using HTML/CSS with automated Google Apps Script forms.',
-    results: ['Creative content management', 'Event support', '#1 social engagement'],
+      'Localized marketing and social media content (JP/EN → TH) and supported campaign landing pages, PR, and event communications.',
+    results: [
+      'Managed OWNDAYS meets LingLing Kwong event — delivered #1 social engagement among competitors',
+      'Localized 5+ major campaign collaborations (Hello Kitty, Stranger Things, Disney Frozen, DITA Lancier)',
+      'Built campaign landing pages and automated workflows with HTML/CSS and Google Apps Script',
+    ],
   },
   {
     title: 'Japanese Coordinator',
     company: 'ASIA ALLIANCE PARTNER CO., LTD.',
     period: 'June 2021 – August 2024',
     description:
-      'Created and translated news content from English and Japanese into Thai for website and internal communications, wrote articles about Thailand in Japanese for the company newspaper, and coordinated with the Japan Desk team to strengthen bilingual communication and audience engagement.',
-    results: ['EN / JP to TH translation', 'Website and internal communications', 'Facebook growth from 0 to 60,000'],
+      'Produced and translated external and internal communications (EN/JP → TH), and authored Japanese articles to engage cross-border audiences.',
+    results: ['EN/JP → TH translation', 'Website & internal comms', 'Grew Facebook to 60,000 followers'],
   },
   {
     title: 'General Affairs Administrator',
     company: 'ASIA ALLIANCE PARTNER CO., LTD.',
     period: 'October 2019 – June 2021',
     description:
-      'Managed general affairs and HR administrative operations, including documentation control, vendor coordination, meeting schedules, and company event support to maintain smooth and efficient organizational operations.',
-    results: ['GA and HR support', 'Documentation management', 'Vendor and event coordination'],
+      'Handled general affairs and HR tasks, documentation control, vendor coordination, and event logistics to ensure operational continuity.',
+    results: ['GA & HR administration', 'Documentation control', 'Vendor & event coordination'],
   },
   {
     title: 'Product Planning',
     company: 'JTB (THAILAND) LIMITED',
     period: 'May 2018 – September 2019',
     description:
-      'Created bespoke Thailand travel itineraries for Japanese clients and coordinated with hotels and transportation suppliers. Designed promotional brochures and leaflets in Japanese using Adobe Photoshop to support marketing and client-facing communications.',
-    results: ['Japanese client itinerary planning', 'Supplier coordination', 'Japanese marketing design'],
+      'Planned tailored travel itineraries for Japanese clients, coordinated suppliers, and produced Japanese promotional materials in Photoshop.',
+    results: ['Travel itinerary planning', 'Supplier coordination', 'Japanese marketing design'],
   },
 ];
 
@@ -187,12 +191,14 @@ export function App() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white selection:bg-white/20 selection:text-white">
       <div className="fixed inset-0 z-0 pointer-events-none">
+        {/* Background video removed to avoid runtime playback; frames are pre-extracted instead. */}
+
         <CharacterCanvas
           onTelemetryUpdate={handleTelemetryUpdate}
           manualOverrideAngle={manualAngle}
           autoPatrol={autoPatrol}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_35%),linear-gradient(to_bottom,rgba(0,0,0,0.28),rgba(0,0,0,0.9))]" />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 6 }} className="bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.02),transparent_35%),linear-gradient(to_bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.5))]" />
       </div>
 
       <Header
@@ -316,14 +322,13 @@ export function App() {
                     </div>
                   </div>
 
-                  <p className="mt-4 text-base leading-7 text-[#E2E8F0]">{role.description}</p>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {role.results.map((result) => (
-                      <span key={result} className="rounded-full border border-white/10 bg-black/20 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#E2E8F0]">
-                        {result}
-                      </span>
-                    ))}
+                  <div className="mt-4 text-base leading-7 text-[#E2E8F0]">
+                    <p>{role.description}</p>
+                    <ul className="list-disc list-inside mt-3 space-y-1 text-sm">
+                      {role.results.map((result) => (
+                        <li key={result} className="text-[#E2E8F0]">{result}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>

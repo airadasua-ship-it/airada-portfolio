@@ -57,29 +57,29 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
                   title: 'Content Writer & Translator',
                   company: 'OWNDAYS (THAILAND) CO., LTD.',
                   period: 'September 2024 – Present',
-                  desc: 'Localized and translated Japanese and English marketing content into Thai for campaigns including OWNDAYS x Hello Kitty, Stranger Things, DITA Lancier, Disney Frozen, and Zootopia, while building campaign landing pages and supporting PR content strategy.',
-                  tags: ['Localization', 'Copywriting', 'PR Content', 'HTML/CSS'],
+                  desc: 'Localized marketing and social media content (JP/EN → TH). Supported campaign landing pages, PR copy, and event communications.',
+                  tags: ['Localization', 'Copywriting', 'Social Media', 'HTML/CSS'],
                 },
                 {
                   title: 'Japanese Coordinator',
                   company: 'ASIA ALLIANCE PARTNER CO., LTD.',
                   period: 'June 2021 – August 2024',
-                  desc: 'Created and translated website and internal communications from English and Japanese into Thai, wrote articles in Japanese for the company newspaper, and coordinated with the Japan Desk team to strengthen bilingual communication.',
-                  tags: ['Translation', 'Communication', 'Content Strategy', 'Audience Engagement'],
+                  desc: 'Produced and translated external/internal content (EN/JP → TH) and authored Japanese articles to engage cross-border audiences.',
+                  tags: ['Translation', 'Content', 'Bilingual Coordination', 'Audience Growth'],
                 },
                 {
                   title: 'General Affairs Administrator',
                   company: 'ASIA ALLIANCE PARTNER CO., LTD.',
                   period: 'October 2019 – June 2021',
-                  desc: 'Managed general affairs and HR administration, including documentation, vendor coordination, scheduling, and event support to keep operations smooth and well-organized.',
-                  tags: ['General Affairs', 'HR Admin', 'Documentation', 'Vendor Support'],
+                  desc: 'Handled general affairs and HR tasks, documentation control, vendor coordination, and event logistics to maintain operational continuity.',
+                  tags: ['GA', 'HR', 'Documentation', 'Vendor Coordination'],
                 },
                 {
                   title: 'Product Planning',
                   company: 'JTB (THAILAND) LIMITED',
                   period: 'May 2018 – September 2019',
-                  desc: 'Designed Thailand travel itineraries for Japanese clients and created Japanese promotional brochures and leaflets using Adobe Photoshop to support marketing and client communications.',
-                  tags: ['Travel Planning', 'Japanese Design', 'Supplier Coordination', 'Marketing Support'],
+                  desc: 'Planned tailored travel itineraries for Japanese clients, coordinated suppliers, and produced Japanese promotional materials in Photoshop.',
+                  tags: ['Itinerary Planning', 'Supplier Coordination', 'Design'],
                 },
               ].map((proj, idx) => (
                 <div
@@ -314,9 +314,11 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
                     </div>
                     <span className="text-[10px] font-mono text-white/50">September 2024 – Present</span>
                   </div>
-                  <p className="text-xs text-white/80 mt-2 leading-relaxed">
-                    Localized and translated marketing and social media content from Japanese and English into Thai for campaigns including OWNDAYS x Hello Kitty, Stranger Things, DITA Lancier, Disney Frozen, and Zootopia. Formulated content strategy, directed creative teams, and built PR and landing pages using HTML/CSS with automated Google Apps Script forms.
-                  </p>
+                  <ul className="mt-2 list-disc list-inside text-xs text-white/80">
+                    <li>Localized marketing and social media content (JP/EN → TH) for major campaigns.</li>
+                    <li>Managed OWNDAYS meets LingLing Kwong event — achieved #1 social engagement among competitors.</li>
+                    <li>Built campaign landing pages and automated workflows with HTML/CSS and Google Apps Script.</li>
+                  </ul>
                 </div>
 
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
@@ -327,9 +329,11 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
                     </div>
                     <span className="text-[10px] font-mono text-white/50">June 2021 – August 2024</span>
                   </div>
-                  <p className="text-xs text-white/80 mt-2 leading-relaxed">
-                    Created and translated news content from English and Japanese into Thai for website and internal communications, wrote articles about Thailand in Japanese for the company newspaper, and coordinated with the Japan Desk team to strengthen bilingual communication and audience engagement.
-                  </p>
+                  <ul className="mt-2 list-disc list-inside text-xs text-white/80">
+                    <li>Produced and translated external and internal communications (EN/JP → TH).</li>
+                    <li>Authored Japanese articles to engage cross-border readers.</li>
+                    <li>Supported audience growth and content strategy; grew Facebook to 60,000 followers.</li>
+                  </ul>
                 </div>
 
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
@@ -340,9 +344,10 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
                     </div>
                     <span className="text-[10px] font-mono text-white/50">October 2019 – June 2021</span>
                   </div>
-                  <p className="text-xs text-white/80 mt-2 leading-relaxed">
-                    Managed general affairs and HR administrative operations, including documentation control, vendor coordination, meeting schedules, and company event support to maintain smooth and efficient organizational operations.
-                  </p>
+                  <ul className="mt-2 list-disc list-inside text-xs text-white/80">
+                    <li>Handled GA and HR administration, documentation control, and vendor coordination.</li>
+                    <li>Coordinated event logistics and scheduling to ensure operational continuity.</li>
+                  </ul>
                 </div>
 
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
@@ -353,9 +358,10 @@ export const Modals: React.FC<ModalsProps> = ({ activeModal, onClose }) => {
                     </div>
                     <span className="text-[10px] font-mono text-white/50">May 2018 – September 2019</span>
                   </div>
-                  <p className="text-xs text-white/80 mt-2 leading-relaxed">
-                    Created bespoke Thailand travel itineraries for Japanese clients and coordinated with hotels and transportation suppliers. Designed promotional brochures and leaflets in Japanese using Adobe Photoshop to support marketing and client-facing communications.
-                  </p>
+                  <ul className="mt-2 list-disc list-inside text-xs text-white/80">
+                    <li>Planned tailored travel itineraries for Japanese clients and coordinated suppliers.</li>
+                    <li>Designed Japanese promotional materials using Adobe Photoshop.</li>
+                  </ul>
                 </div>
               </div>
             </div>

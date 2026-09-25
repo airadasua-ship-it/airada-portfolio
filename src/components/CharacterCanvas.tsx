@@ -19,8 +19,8 @@ interface CharacterCanvasProps {
 }
 
 const TOTAL_FRAMES = 64;
-const BG_COLOR = '#000000';
-const LERP_FACTOR = 0.24; // tracks in ~35ms with zero lag
+const BG_COLOR = '#AEC6CF'; // pastel blue background applied globally
+const LERP_FACTOR = 0.26; // tracks in ~35ms with zero lag (user specified ~0.26)
 
 const COMPASS_NAMES = [
   'EAST [RIGHT]',
@@ -226,17 +226,25 @@ export const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
       if (isInDeadzone && centerFrameRef.current) {
         imgToDraw = centerFrameRef.current;
       } else {
-        // Map smoothed angle to 0..63
+        // Map smoothed angle to 0..63.
+        // Frames in the sprite are arranged opposite to the angular sign, so
+        // invert the frame index mapping so the character looks TOWARD the cursor.
         const normAngle = ((currentAngleRef.current % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
-        activeFrameIdx = Math.round((normAngle / (Math.PI * 2)) * TOTAL_FRAMES) % TOTAL_FRAMES;
+        const rawIdx = Math.round((normAngle / (Math.PI * 2)) * TOTAL_FRAMES) % TOTAL_FRAMES;
+        activeFrameIdx = (TOTAL_FRAMES - rawIdx) % TOTAL_FRAMES;
         imgToDraw = framesRef.current[activeFrameIdx] || centerFrameRef.current;
       }
 
       // Draw EXACTLY ONE crisp frame at 100% opacity. NO alpha blending!
       if (imgToDraw && imgToDraw.complete && imgToDraw.naturalWidth > 0) {
-        // Background fill to eliminate subpixel seam artifacts
-        ctx.fillStyle = BG_COLOR;
-        ctx.fillRect(0, 0, W, H);
+        // Only fill background when a solid BG_COLOR is required
+        if (BG_COLOR !== 'transparent') {
+          ctx.fillStyle = BG_COLOR;
+          ctx.fillRect(0, 0, W, H);
+        } else {
+          // clear the canvas to transparent before drawing
+          ctx.clearRect(0, 0, W, H);
+        }
         ctx.drawImage(imgToDraw, drawX, drawY, drawW, drawH);
       }
 
@@ -274,7 +282,7 @@ export const CharacterCanvas: React.FC<CharacterCanvasProps> = ({
   }, [isReady, manualOverrideAngle, autoPatrol, onTelemetryUpdate]);
 
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#000000] select-none pointer-events-none">
+    <div style={{ zIndex: 2 }} className="absolute inset-0 w-full h-full overflow-hidden bg-[transparent] select-none pointer-events-none">
       {/* Loading Screen */}
       {!isReady && (
         <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#000000] text-[#FFFFFF]">
